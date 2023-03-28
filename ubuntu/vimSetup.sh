@@ -1,10 +1,3 @@
-
-echo "Vim Setup is initialized...."
-sudo apt install vim -y
-touch ~/.vimrc
-
-
-echo '"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""               '
 echo '"               '
 echo '"               ██╗   ██╗██╗███╗   ███╗██████╗  ██████╗'
 echo '"               ██║   ██║██║████╗ ████║██╔══██╗██╔════╝'
@@ -13,9 +6,29 @@ echo '"               ╚██╗ ██╔╝██║██║╚██╔╝
 echo '"                ╚████╔╝ ██║██║ ╚═╝ ██║██║  ██║╚██████╗'
 echo '"                 ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝'
 echo '"               '
-echo '"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""   '
+echo ""
+echo "Vim Setup is initialized...."
+echo "sudo apt install vim -y"
+sudo apt install vim -y
+echo "sudo rm ~/.vimrc -f"
+sudo rm ~/.vimrc -f
+echo "touch ~/.vimrc"
+touch ~/.vimrc
 
 
+
+
+
+echo '"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""               '>> ~/.vimrc
+echo '"               '>> ~/.vimrc
+echo '"               ██╗   ██╗██╗███╗   ███╗██████╗  ██████╗'>> ~/.vimrc
+echo '"               ██║   ██║██║████╗ ████║██╔══██╗██╔════╝'>> ~/.vimrc
+echo '"               ██║   ██║██║██╔████╔██║██████╔╝██║     '>> ~/.vimrc
+echo '"               ╚██╗ ██╔╝██║██║╚██╔╝██║██╔══██╗██║     '>> ~/.vimrc
+echo '"                ╚████╔╝ ██║██║ ╚═╝ ██║██║  ██║╚██████╗'>> ~/.vimrc
+echo '"                 ╚═══╝  ╚═╝╚═╝     ╚═╝╚═╝  ╚═╝ ╚═════╝'>> ~/.vimrc
+echo '"               '>> ~/.vimrc
+echo '"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""   '>> ~/.vimrc
 echo '" Disable compatibility with vi which can cause unexpected issues.' >> ~/.vimrc
 echo "set nocompatible" >> ~/.vimrc
 
