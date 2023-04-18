@@ -1,4 +1,4 @@
-# Bash Scripting Cheat Sheet
+# Shell Scripting Cheat Sheet
 
 A shell script is a computer program designed to be run by a Unix shell, a command-line interpreter. The various dialects of shell scripts are considered to be scripting languages. Typical operations performed by shell scripts include file manipulation, program execution, and printing text. A script which sets up the environment, runs the program, and does any necessary cleanup or logging, is called a wrapper.
 
@@ -12,14 +12,51 @@ soucrce: [Wikipedia](https://en.wikipedia.org/wiki/Shell_script)
 
     # echo "This is a comment"
 
+=> # is used to define comments in shell
+
+### Run Shell Script
+
+First add executable permission to file
+
+    $ chmod +x ./<filename>.sh
+
+The Run the file
+
+    $ ./<filename>.sh
+
+Run File without Permission
+
+    $ bash <filename>.sh
 ### Variable
+
+    username="thecaptaan"
+
+=> no space around = (equal to) sign
+
+    echo $username
+
+=> use $(dollar sign) to get the value of variable
 
 ### Special Variable
 
-- env => this command will print outl Global Varibale
-- **$?** = is special varibale that conatin exit code
-  mean that is program is runned successful or not
-- **$PATH** =
+- **$$** => is used to print PID of current shell
+
+- **$0** => is used to print the filename of current script
+
+- **$#** => is used to the no of arguments passed to script
+
+- **$?** => is used to get exit code of last command executed. 0 means run successfully & any no other than 0 mean that last command doesn't run successfull.
+
+- **$n** => where as, n is a **Natural No**. **$n** contain arguments. Example 2 arguments has passed to script **$1** contain one argument & **$2** contain second argument.
+- **$!** => to get PID of last background command.
+
+- **\$\*** => All the arguments are double quoted. If a script receives two arguments,**\$\*** is equivalent to **$1** **$2**.
+
+- **\$@** =>
+All the arguments are individually double quoted. If a script receives two arguments, **\$@** is equivalent to **$1** **$2**.
+
+- **env** => is used to check all ***ENVIRONMENT VARIABLE*** that is avilable in our system.
+- **$PATH** = contain direcotry list to find executable of command that is entered in shell
 
 ### Array
 
@@ -31,10 +68,7 @@ soucrce: [Wikipedia](https://en.wikipedia.org/wiki/Shell_script)
     read output
     echo $output
 
-### Conditional
-
-- || => or
-- && => and
+=> read command is used to get input from user.
 
 ### If
 
@@ -71,12 +105,24 @@ soucrce: [Wikipedia](https://en.wikipedia.org/wiki/Shell_script)
         echo "$command is NOT avilable, installing it ..."
         sudo apt update && sudo apt install htop -y
 
+### Comparison Operators
+
 - -d = directory
 - -f = file
-- -eq = equal then
-- -ne = not eqal to
-- -gt = greater than
-- -le = less than or equal to
+- -eq = is equal to
+- -ne = is not equal to
+- -gt = is greater than
+- -ge = is greater than or equal to 
+- -lt = is less than 
+- -le = is less than or equal to
+-
+
+### Conditional
+
+- ! => not eqal 
+- -o => or
+- -a => and
+
 
 ### while Loop
 
