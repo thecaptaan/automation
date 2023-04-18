@@ -4,6 +4,23 @@ A shell script is a computer program designed to be run by a Unix shell, a comma
 
 soucrce: [Wikipedia](https://en.wikipedia.org/wiki/Shell_script)
 
+### Run Shell Script
+
+First add executable permission to file
+    
+    $ touch <filename.sh>
+
+    // set permission to run your file
+    $ chmod +x ./<filename>.sh
+
+The Run the file
+
+    $ ./<filename>.sh
+
+Run File without Permission
+
+    $ bash <filename>.sh
+
 ### Print
 
     echo "Hello World!"
@@ -14,19 +31,7 @@ soucrce: [Wikipedia](https://en.wikipedia.org/wiki/Shell_script)
 
 => # is used to define comments in shell
 
-### Run Shell Script
 
-First add executable permission to file
-
-    $ chmod +x ./<filename>.sh
-
-The Run the file
-
-    $ ./<filename>.sh
-
-Run File without Permission
-
-    $ bash <filename>.sh
 ### Variable
 
     username="thecaptaan"
@@ -61,10 +66,28 @@ All the arguments are individually double quoted. If a script receives two argum
 
 ### Mathematical Expression
 
+method 1: 
+
     #!/bin/bash
 
-    value = `expr 2 + 2`
+    result=`expr 2 + 2`
     echo value
+
+method 2:
+
+    #!/bin/bash
+    
+    result=$(expr 2 + 2)
+    echo result
+
+method 3:
+
+    #!/bin/bash
+
+    value1=100
+    value2=200
+    result=$(($value1 + $value2))
+    echo
 
 
 ### Input From user
@@ -79,13 +102,14 @@ All the arguments are individually double quoted. If a script receives two argum
 
 ### Array
 
+Method 1:
+
     #!/bin/bash
     
     names=("The Captaan" "Ayush Anand" "Jhon Smith") 
     echo ${names[0]}
 
-<br>
-
+Method 2:
 
     #!/bin/bash
 
@@ -93,13 +117,10 @@ All the arguments are individually double quoted. If a script receives two argum
     name[1]="Ayush Anand"
     name[2]="Jhon Smith"
 
+=> Index will start with 0
 
-<br>
+=> to seprate the value use **space**
 
-    #!/bin/bash
-    read names
-    echo ${names[0]}
-    echo ${names[1]}
 ## Conditions
 
 ### If
