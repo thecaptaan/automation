@@ -58,9 +58,14 @@ All the arguments are individually double quoted. If a script receives two argum
 - **env** => is used to check all ***ENVIRONMENT VARIABLE*** that is avilable in our system.
 - **$PATH** = contain direcotry list to find executable of command that is entered in shell
 
-### Array
 
 ### Mathematical Expression
+
+    #!/bin/bash
+
+    value = `expr 2 + 2`
+    echo value
+
 
 ### Input From user
 
@@ -70,15 +75,47 @@ All the arguments are individually double quoted. If a script receives two argum
 
 => read command is used to get input from user.
 
+=> input value is stored in variable **output**.
+
+### Array
+
+    #!/bin/bash
+    
+    names=("The Captaan" "Ayush Anand" "Jhon Smith") 
+    echo ${names[0]}
+
+<br>
+
+
+    #!/bin/bash
+
+    name[0]="The Captaan"
+    name[1]="Ayush Anand"
+    name[2]="Jhon Smith"
+
+
+<br>
+
+    #!/bin/bash
+    read names
+    echo ${names[0]}
+    echo ${names[1]}
+## Conditions
+
 ### If
 
     #!/bin/bash
 
     mynum=200
-    if [ $mynum -eq 200]
+    if [ $mynum -eq 200 ]
     then
         echo "MyNum is equal to 200"
     fi
+
+=> Keep space around square bracket.
+
+=> 
+
 
 ### if else
 
@@ -123,6 +160,14 @@ All the arguments are individually double quoted. If a script receives two argum
 - -o => or
 - -a => and
 
+<br>
+    #!/bin/bash
+
+    read result
+    if [ ! $result -eq 100 ]
+    then
+
+    fi
 
 ### while Loop
 
