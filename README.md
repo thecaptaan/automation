@@ -1,13 +1,39 @@
-# Shell Scripting Cheat Sheet
+<center>
+<img src="https://bashlogo.com/img/symbol/svg/full_colored_dark.svg" width="100"/><h1># Shell Scripting Cheat Sheet</h1></center>
+
+
+## Table Of Content
+
+1) [Introduction](#introduction)
+2) [How To Run Shell Script](#how-to-run-shell-script)
+3) [Basic](#basic)
+    1) [Print](#print)
+    2) [Comments](#comment)
+4) [Variable](#variable)
+    1) [Special Variable](#special-variable)
+5) [Mathematical Expression](#mathematical-expression)
+6) [Input From User](#input-from-user)
+7) [Arrays](#arrays)
+8) [Conditions](#conditions)
+    1) [If Condition](#if)
+    2) [If Else Condition](#if-else)
+    3) [Some examples](#condition-examples)
+9) [Loops](#loops)
+    1) [while loop](#while-loop)
+    2) [for loop](#for-loop)
+20) [Refrences](#reference)
+21) [Ubuntu Shell Script](https://github.com/thecaptaan/bash/tree/main/ubuntu)
+22) [Fedora Shell Script](https://github.com/thecaptaan/bash/tree/main/fedora)
+## Introduction
 
 A shell script is a computer program designed to be run by a Unix shell, a command-line interpreter. The various dialects of shell scripts are considered to be scripting languages. Typical operations performed by shell scripts include file manipulation, program execution, and printing text. A script which sets up the environment, runs the program, and does any necessary cleanup or logging, is called a wrapper.
 
 soucrce: [Wikipedia](https://en.wikipedia.org/wiki/Shell_script)
 
-### Run Shell Script
+### How To Run Shell Script
 
 First add executable permission to file
-    
+
     $ touch <filename.sh>
 
     // set permission to run your file
@@ -21,6 +47,7 @@ Run File without Permission
 
     $ bash <filename>.sh
 
+## Basic
 ### Print
 
     echo "Hello World!"
@@ -30,7 +57,6 @@ Run File without Permission
     # echo "This is a comment"
 
 => # is used to define comments in shell
-
 
 ### Variable
 
@@ -58,15 +84,14 @@ Run File without Permission
 - **\$\*** => All the arguments are double quoted. If a script receives two arguments,**\$\*** is equivalent to **$1** **$2**.
 
 - **\$@** =>
-All the arguments are individually double quoted. If a script receives two arguments, **\$@** is equivalent to **$1** **$2**.
+  All the arguments are individually double quoted. If a script receives two arguments, **\$@** is equivalent to **$1** **$2**.
 
-- **env** => is used to check all ***ENVIRONMENT VARIABLE*** that is avilable in our system.
+- **env** => is used to check all **_ENVIRONMENT VARIABLE_** that is avilable in our system.
 - **$PATH** = contain direcotry list to find executable of command that is entered in shell
-
 
 ### Mathematical Expression
 
-method 1: 
+method 1:
 
     #!/bin/bash
 
@@ -76,7 +101,7 @@ method 1:
 method 2:
 
     #!/bin/bash
-    
+
     result=$(expr 2 + 2)
     echo result
 
@@ -89,6 +114,23 @@ method 3:
     result=$(($value1 + $value2))
     echo
 
+NOTE :
+
+    #!/bin/bash
+
+    product=`expr 49 \* 49`
+    echo $product
+
+=> **\*** is a special variable. So inorder to use **\*** we have to esacpe it (\*)
+
+    #!/bin/bash
+
+    value1=49
+    valu2=49
+    product=$(( $value1 * value2))
+    echo $product
+
+=> But this method will work fine.
 
 ### Input From user
 
@@ -100,13 +142,13 @@ method 3:
 
 => input value is stored in variable **output**.
 
-### Array
+### Arrays
 
 Method 1:
 
     #!/bin/bash
-    
-    names=("The Captaan" "Ayush Anand" "Jhon Smith") 
+
+    names=("The Captaan" "Ayush Anand" "Jhon Smith")
     echo ${names[0]}
 
 Method 2:
@@ -135,8 +177,7 @@ Method 2:
 
 => Keep space around square bracket.
 
-=> 
-
+=>
 
 ### if else
 
@@ -150,7 +191,7 @@ Method 2:
         echo "MyNum is not equal tov200"
     fi
 
-### example
+### Condition Examples
 
     #!/bin/bash
 
@@ -165,19 +206,16 @@ Method 2:
 
 ### Comparison Operators
 
-- -d = directory
-- -f = file
 - -eq = is equal to
 - -ne = is not equal to
 - -gt = is greater than
-- -ge = is greater than or equal to 
-- -lt = is less than 
+- -ge = is greater than or equal to
+- -lt = is less than
 - -le = is less than or equal to
--
 
 ### Conditional
 
-- ! => not eqal 
+- ! => not eqal
 - -o => or
 - -a => and
 
@@ -189,6 +227,8 @@ Method 2:
     then
 
     fi
+
+## Loops
 
 ### while Loop
 
@@ -245,7 +285,10 @@ Method 2:
         *) echo ""
     esac
 
-### Scheduling Jobs
+###
+
+- -d = directory
+- -f = file
 
 ### Reference
 
